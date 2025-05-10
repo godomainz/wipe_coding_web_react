@@ -24,7 +24,7 @@ const Footer: React.FC = () => (
       </div>
     </div>
     <div className="text-center text-gray-500 text-sm mt-6">
-      &copy; {new Date().getFullYear()} WipeCoding. All rights reserved.
+      &copy; {new Date().getFullYear()} WipeCoding. Public Domain.
     </div>
   </footer>
 );
