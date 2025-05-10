@@ -16,7 +16,6 @@ const HomePage: React.FC = () => (
     <Navbar />
     <main className="pt-20">
       <Hero />
-      <About />
       <Features />
     </main>
     <Footer />
