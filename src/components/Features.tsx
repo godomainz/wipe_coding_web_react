@@ -7,9 +7,10 @@ interface Feature {
 }
 
 const features: Feature[] = [
-  { title: 'Idea Capture', description: 'Describe your project goals.', iconPath: '/icons/idea.svg' },
-  { title: 'Visual Templates', description: 'Customize pre-built layouts.', iconPath: '/icons/template.svg' },
-  { title: 'One-Click Deploy', description: 'Deploy instantly to Vercel, Netlify.', iconPath: '/icons/deploy.svg' },
+  { title: 'Idea', description: 'Define your app concept.', iconPath: '/icons/idea.svg' },
+  { title: 'Prompt', description: 'Describe requirements.', iconPath: '/icons/prompt.svg' },
+  { title: 'AI Suggestion', description: 'Get code from AI.', iconPath: '/icons/suggestion.svg' },
+  { title: 'Test & Deploy', description: 'Review and launch.', iconPath: '/icons/launch.svg' },
 ];
 
 const Features: React.FC = () => (
