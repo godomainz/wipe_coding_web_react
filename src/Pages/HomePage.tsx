@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Benefits from '../components/Benefits';
 import RisksChallenges from '../components/RisksChallenges';
+import ToolsResources from '../components/ToolsResources';
 
 const HomePage: React.FC = () => (
   <>
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => (
       <Features />
       <Benefits />
       <RisksChallenges />
+      <ToolsResources />
     </main>
     <Footer />
   </>
