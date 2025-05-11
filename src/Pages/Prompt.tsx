@@ -129,7 +129,7 @@ const Prompt: React.FC = () => (
           <motion.div key={step.id} variants={itemVariants} transition={{ delay: 0.2 * (idx + codePrinciples.length) }} className="mb-8">
             <h3 id={step.id} className="text-2xl font-semibold mb-2">{step.title}</h3>
             <p style={{ whiteSpace: 'pre-line' }}>{step.content}</p>
-            {step.id=="structuring-prompt"?<>
+            {step.id === "structuring-prompt"?<>
                 <motion.div
                   className="mt-16 grid md:grid-cols-2 gap-8"
                   variants={containerVariants}
