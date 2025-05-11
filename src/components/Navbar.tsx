@@ -4,7 +4,7 @@ const Navbar: React.FC = () => (
   <header className="fixed w-full z-50 bg-white bg-opacity-80 backdrop-blur-md">
     <div className="container mx-auto flex items-center justify-between py-4 px-6">
       <nav className="hidden md:flex space-x-8">
-        <a href="#home" className="text-gray-800 hover:text-blue-600">Home</a>
+        <a href="/" className="text-gray-800 hover:text-blue-600">Home</a>
         <a href="#about" className="text-gray-800 hover:text-blue-600">About</a>
       </nav>
       <a href="/" className="text-2xl font-bold text-gray-800">WipeCoding</a>
