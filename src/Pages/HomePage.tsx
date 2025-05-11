@@ -5,6 +5,7 @@ import Features from '../components/Features';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Benefits from '../components/Benefits';
 
 const HomePage: React.FC = () => (
   <>
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => (
     <main className="pt-20">
       <Hero />
       <Features />
+      <Benefits />
     </main>
     <Footer />
   </>
