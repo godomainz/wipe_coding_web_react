@@ -152,6 +152,84 @@ const Prompt: React.FC = () => (
               }
           </motion.div>
         ))}
+
+        {/* Examples & Templates Section */}
+        <motion.div
+          className="mt-16 prose mx-auto"
+          variants={itemVariants}
+          transition={{
+            delay:
+              0.2 *
+              (codePrinciples.length + stepGuide.length + promptFormats.length +
+                1),
+          }}
+        >
+          <h2 className="text-3xl font-bold mb-4">Examples & Templates</h2>
+
+          {/* Bad vs Good Prompts */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-2">
+              “Bad” vs “Good” Prompts
+            </h3>
+            <ul className="list-disc list-inside space-y-4">
+              <li>
+                <strong>Bad Prompt:</strong>{' '}
+                <code>Build a login page.</code>
+                <br />
+                <em>Why it’s bad:</em> Too vague. No details on user type,
+                fields, security requirements, or design. AI may produce a
+                generic or incomplete login form.
+              </li>
+              <li>
+                <strong>Good Prompt:</strong>
+                <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap mt-2">
+                  <code>
+                    As a registered user, I want a secure login page so that only I can access my account.
+                    Requirements:
+                    - Email and password fields, with HTML5 validation for email.
+                    - “Show password” toggle.
+                    - OAuth login option (e.g. Google).
+                    Acceptance Criteria:
+                    - Form submits to /api/login; invalid attempts return error.
+                    - Password must be at least 8 characters, one number.
+                    - Speed: page loads in under 1 second.
+                  </code>
+                </pre>
+                <p className="mt-2">
+                  <em>Why it’s good:</em> Specifies user, purpose, UI
+                  elements, validation rules, and criteria. The AI has clear
+                  guidance on implementation and testing targets.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          {/* Prompt Template Structure */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-2">
+              Prompt Template (structure)
+            </h3>
+            <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+              <code>
+                Feature: [short title]
+                Description: [detailed overview]
+                User Story: As a [user/role], I want [action] so that [goal].
+                Requirements:
+                - [Specific feature or constraint]
+                - [Data sources or inputs]
+                - [Security/performance rules]
+                Acceptance Criteria:
+                - [Measurable outcome or test condition]
+                - [Edge case or non-functional requirement]
+                              </code>
+                            </pre>
+                            <p className="mt-4">
+                              Having a reusable prompt template (even a downloadable worksheet)
+                              helps your team write <em>describe requirements</em> prompts
+                              consistently.
+                            </p>
+                          </div>
+        </motion.div>
       </motion.section>
     </motion.main>
     <Footer />
