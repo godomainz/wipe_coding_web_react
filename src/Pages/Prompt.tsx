@@ -1,17 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-// URL Slug: /wipe-coding-vibe-coding-describe-requirements
-// Title: Describe Requirements in Wipe & Vibe Coding
-// Meta: Write precise prompts in Wipe & Vibe Coding to speed delivery and reduce rework.
-
-const sectionVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const containerVariants = {
   hidden: {},
@@ -84,156 +75,151 @@ const promptFormats = [
   }
 ];
 
-const Prompt: React.FC = () => (
-  <>
-    <Helmet>
-      <title>Describe Requirements in Wipe & Vibe Coding</title>
-      <meta name="description" content="Write precise prompts in Wipe & Vibe Coding to speed delivery and reduce rework." />
-    </Helmet>
-    <Navbar />
-    <motion.main
-      className="pt-20"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <motion.section
-        id="describe-requirements"
-        className="prose mx-auto py-20 px-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariant}
-        transition={{ duration: 0.6 }}
-      >
-        <motion.div variants={itemVariants}>
-          <h2 className="text-3xl font-bold mb-4">Describe Requirements in Wipe & Vibe Coding</h2>
-          <p>
-            In <strong>Wipe Coding</strong> and <strong>Vibe Coding</strong> methodologies, writing precise prompts — the <em>“describe requirements”</em> step — is critical to align teams on the problem and avoid wasted effort. By clearly defining <strong>what</strong> needs to be built and <strong>why</strong>, teams reduce miscommunication and speed delivery.
-          </p>
-        </motion.div>
-
-        {/* Core Principles */}
-        {codePrinciples.map((p, idx) => (
-          <motion.div key={p.id} variants={itemVariants} className="mt-12">
-            <h2 id={p.id} className="text-3xl font-bold mb-4">{p.title}</h2>
-            <p>{p.content}</p>
-          </motion.div>
-        ))}
-
-        {/* Step-by-Step Guide */}
-        <motion.div variants={itemVariants} className="mt-12">
-          <h2 className="text-3xl font-bold mb-4">Step-by-Step Guide</h2>
-        </motion.div>
-        {stepGuide.map((step, idx) => (
-          <motion.div key={step.id} variants={itemVariants} transition={{ delay: 0.2 * (idx + codePrinciples.length) }} className="mb-8">
-            <h3 id={step.id} className="text-2xl font-semibold mb-2">{step.title}</h3>
-            <p style={{ whiteSpace: 'pre-line' }}>{step.content}</p>
-            {step.id === "structuring-prompt"?<>
-                <motion.div
-                  className="mt-16 grid md:grid-cols-2 gap-8"
-                  variants={containerVariants}
-                >
-                      {promptFormats.map((fmt, i) => (
-                        <motion.div
-                          key={fmt.id}
-                          variants={itemVariants}
-                          transition={{ delay: 0.2 + (stepGuide.length + i) * 0.2 }}
-                          className="bg-gray-50 p-6 rounded-lg shadow-lg"
-                        >
-                          <h4 className="text-xl font-semibold mb-3">{fmt.title}</h4>
-                          <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
-                            <code>{fmt.code}</code>
-                          </pre>
-                        </motion.div>
-                      ))}
-                </motion.div>
-                </>:null
-              }
-          </motion.div>
-        ))}
-
-        {/* Examples & Templates Section */}
-        <motion.div
-          className="mt-16 prose mx-auto"
-          variants={itemVariants}
-          transition={{
-            delay:
-              0.2 *
-              (codePrinciples.length + stepGuide.length + promptFormats.length +
-                1),
-          }}
+const Prompt: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+  return <>
+        <Helmet>
+          <title>Describe Requirements in Wipe & Vibe Coding</title>
+          <meta name="description" content="Write precise prompts in Wipe & Vibe Coding to speed delivery and reduce rework." />
+        </Helmet>
+        <Navbar />
+        <motion.main
+          className="pt-20"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
         >
-          <h2 className="text-3xl font-bold mb-4">Examples & Templates</h2>
+          <div className="max-w-4xl mx-auto px-4 py-12 prose lg:prose-xl">
+          <motion.div variants={itemVariants}>
+              <h2 className="text-3xl font-bold mb-4">Describe Requirements in Wipe & Vibe Coding</h2>
+              <p>
+                In <strong>Wipe Coding</strong> and <strong>Vibe Coding</strong> methodologies, writing precise prompts — the <em>“describe requirements”</em> step — is critical to align teams on the problem and avoid wasted effort. By clearly defining <strong>what</strong> needs to be built and <strong>why</strong>, teams reduce miscommunication and speed delivery.
+              </p>
+            </motion.div>
 
-          {/* Bad vs Good Prompts */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-2">
-              “Bad” vs “Good” Prompts
-            </h3>
-            <ul className="list-disc list-inside space-y-4">
-              <li>
-                <strong>Bad Prompt:</strong>{' '}
-                <code>Build a login page.</code>
-                <br />
-                <em>Why it’s bad:</em> Too vague. No details on user type,
-                fields, security requirements, or design. AI may produce a
-                generic or incomplete login form.
-              </li>
-              <li>
-                <strong>Good Prompt:</strong>
-                <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap mt-2">
+            {/* Core Principles */}
+            {codePrinciples.map((p, idx) => (
+              <motion.div key={p.id} variants={itemVariants} className="mt-12">
+                <h2 id={p.id} className="text-3xl font-bold mb-4">{p.title}</h2>
+                <p>{p.content}</p>
+              </motion.div>
+            ))}
+
+            {/* Step-by-Step Guide */}
+            <motion.div variants={itemVariants} className="mt-12">
+              <h2 className="text-3xl font-bold mb-4">Step-by-Step Guide</h2>
+            </motion.div>
+            {stepGuide.map((step, idx) => (
+              <motion.div key={step.id} variants={itemVariants} transition={{ delay: 0.2 * (idx + codePrinciples.length) }} className="mb-8">
+                <h3 id={step.id} className="text-2xl font-semibold mb-2">{step.title}</h3>
+                <p style={{ whiteSpace: 'pre-line' }}>{step.content}</p>
+                {step.id === "structuring-prompt"?<>
+                    <motion.div
+                      className="mt-16 grid md:grid-cols-2 gap-8"
+                      variants={containerVariants}
+                    >
+                          {promptFormats.map((fmt, i) => (
+                            <motion.div
+                              key={fmt.id}
+                              variants={itemVariants}
+                              transition={{ delay: 0.2 + (stepGuide.length + i) * 0.2 }}
+                              className="bg-gray-50 p-6 rounded-lg shadow-lg"
+                            >
+                              <h4 className="text-xl font-semibold mb-3">{fmt.title}</h4>
+                              <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+                                <code>{fmt.code}</code>
+                              </pre>
+                            </motion.div>
+                          ))}
+                    </motion.div>
+                    </>:null
+                  }
+              </motion.div>
+            ))}
+
+            {/* Examples & Templates Section */}
+            <motion.div
+              className="mt-16 prose mx-auto"
+              variants={itemVariants}
+              transition={{
+                delay:
+                  0.2 *
+                  (codePrinciples.length + stepGuide.length + promptFormats.length +
+                    1),
+              }}
+            >
+              <h2 className="text-3xl font-bold mb-4">Examples & Templates</h2>
+
+              {/* Bad vs Good Prompts */}
+              <div className="mb-8">
+                <h3 className="text-2xl font-semibold mb-2">
+                  “Bad” vs “Good” Prompts
+                </h3>
+                <ul className="list-disc list-inside space-y-4">
+                  <li>
+                    <strong>Bad Prompt:</strong>{' '}
+                    <code>Build a login page.</code>
+                    <br />
+                    <em>Why it’s bad:</em> Too vague. No details on user type,
+                    fields, security requirements, or design. AI may produce a
+                    generic or incomplete login form.
+                  </li>
+                  <li>
+                    <strong>Good Prompt:</strong>
+                    <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap mt-2">
+                      <code>
+                        As a registered user, I want a secure login page so that only I can access my account.
+                        Requirements:
+                        - Email and password fields, with HTML5 validation for email.
+                        - “Show password” toggle.
+                        - OAuth login option (e.g. Google).
+                        Acceptance Criteria:
+                        - Form submits to /api/login; invalid attempts return error.
+                        - Password must be at least 8 characters, one number.
+                        - Speed: page loads in under 1 second.
+                      </code>
+                    </pre>
+                    <p className="mt-2">
+                      <em>Why it’s good:</em> Specifies user, purpose, UI
+                      elements, validation rules, and criteria. The AI has clear
+                      guidance on implementation and testing targets.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Prompt Template Structure */}
+              <div>
+                <h3 className="text-2xl font-semibold mb-2">
+                  Prompt Template (structure)
+                </h3>
+                <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
                   <code>
-                    As a registered user, I want a secure login page so that only I can access my account.
+                    Feature: [short title]
+                    Description: [detailed overview]
+                    User Story: As a [user/role], I want [action] so that [goal].
                     Requirements:
-                    - Email and password fields, with HTML5 validation for email.
-                    - “Show password” toggle.
-                    - OAuth login option (e.g. Google).
+                    - [Specific feature or constraint]
+                    - [Data sources or inputs]
+                    - [Security/performance rules]
                     Acceptance Criteria:
-                    - Form submits to /api/login; invalid attempts return error.
-                    - Password must be at least 8 characters, one number.
-                    - Speed: page loads in under 1 second.
-                  </code>
-                </pre>
-                <p className="mt-2">
-                  <em>Why it’s good:</em> Specifies user, purpose, UI
-                  elements, validation rules, and criteria. The AI has clear
-                  guidance on implementation and testing targets.
-                </p>
-              </li>
-            </ul>
+                    - [Measurable outcome or test condition]
+                    - [Edge case or non-functional requirement]
+                                  </code>
+                                </pre>
+                                <p className="mt-4">
+                                  Having a reusable prompt template (even a downloadable worksheet)
+                                  helps your team write <em>describe requirements</em> prompts
+                                  consistently.
+                                </p>
+                              </div>
+            </motion.div>
           </div>
-
-          {/* Prompt Template Structure */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-2">
-              Prompt Template (structure)
-            </h3>
-            <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
-              <code>
-                Feature: [short title]
-                Description: [detailed overview]
-                User Story: As a [user/role], I want [action] so that [goal].
-                Requirements:
-                - [Specific feature or constraint]
-                - [Data sources or inputs]
-                - [Security/performance rules]
-                Acceptance Criteria:
-                - [Measurable outcome or test condition]
-                - [Edge case or non-functional requirement]
-                              </code>
-                            </pre>
-                            <p className="mt-4">
-                              Having a reusable prompt template (even a downloadable worksheet)
-                              helps your team write <em>describe requirements</em> prompts
-                              consistently.
-                            </p>
-                          </div>
-        </motion.div>
-      </motion.section>
-    </motion.main>
-    <Footer />
+        </motion.main>
+        <Footer />
   </>
-);
+}
 
 export default Prompt;
