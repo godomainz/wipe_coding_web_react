@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HomePage from './pages/HomePage';
 import DefineConceptSection from './pages/DefineConceptSection';
+import Prompt from './pages/Prompt';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,6 +22,10 @@ root.render(
         <Route
           path="/define-app-concept"
           element={<DefineConceptSection />}
+        />
+        <Route
+          path="/prompt"
+          element={<Prompt />}
         />
 
         {/* Fallback 404 (optional) */}
