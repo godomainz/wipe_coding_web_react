@@ -27,6 +27,14 @@ const challenges: Challenge[] = [
     title: 'Learning Curve',
     description: 'New users may take time to adapt to the Wipe Coding philosophy and tooling.',
   },
+  {
+    title: 'AI Hallucinations',
+    description: 'The AI may generate incorrect or unsafe code; always review.',
+  },
+  {
+    title: 'Over-reliance',
+    description: 'Dependence on AI can stunt your own coding skills.',
+  },
 ];
 
 const itemVariants = {
