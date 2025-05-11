@@ -53,13 +53,14 @@ const Features: React.FC = () => {
           {features.map((f, idx) => (
             <motion.div
               key={idx}
-              className={`md:w-1/3 md:px-4 mb-8 md:mb-0 text-center ${
-                f.title === 'Idea' ? 'cursor-pointer' : ''
-              }`}
+              className={`md:w-1/3 md:px-4 mb-8 md:mb-0 text-center cursor-pointer`}
               variants={itemVariants}
               onClick={() => {
                 if (f.title === 'Idea') {
                   navigate('/define-app-concept');
+                }
+                if (f.title === 'Prompt') {
+                  navigate('/prompt');
                 }
               }}
             >
