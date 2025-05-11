@@ -40,49 +40,64 @@ const sections = [
   },
 ];
 
-const variant = {
+// Parent container variants for staggered entrance on mount
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      when: 'beforeChildren'
+    }
+  }
+};
+
+// Individual item animation
+const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
 };
 
 export default function DefineConceptSection() {
   return (
-     <>
-        <Helmet>
-          <title>WipeCoding - Turn Ideas into Code</title>
-          <meta name="description" content="Learn Wipe Coding: step-by-step tutorials, visual templates, and one-click deployment." />
-          <meta name="keywords" content="Wipe Coding, learn Wipe Coding, Wipe Coding tutorials, coding education, Vibe Coding" />
-        </Helmet>
-        <Navbar />
-        <main className="pt-20">
-            <div className="max-w-4xl mx-auto px-4 py-12 prose lg:prose-xl">
-            {sections.map((section, idx) => (
-              <motion.div
-                key={section.id}
-                className="mb-16"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                variants={variant}
-              >
-                <h2 id={section.id} className="text-3xl font-bold mb-4">
-                  {section.title}
-                </h2>
-                <p>
-                  {section.content}
-                  {section.link && (
-                    <Link to={section.link.to} className="text-blue-600 hover:underline">
-                      {section.link.label}
-                    </Link>
-                  )}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </main>
-        <Footer />
-     </>
-    
+    <>
+      <Helmet>
+        <title>WipeCoding - Turn Ideas into Code</title>
+        <meta name="description" content="Learn Wipe Coding: step-by-step tutorials, visual templates, and one-click deployment." />
+        <meta name="keywords" content="Wipe Coding, learn Wipe Coding, Wipe Coding tutorials, coding education, Vibe Coding" />
+      </Helmet>
+
+      <Navbar />
+
+      <motion.main
+        className="pt-20"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <div className="max-w-4xl mx-auto px-4 py-12 prose lg:prose-xl">
+          {sections.map((section, idx) => (
+            <motion.div
+              key={section.id}
+              variants={itemVariants}
+              className="mb-16"
+            >
+              <h2 id={section.id} className="text-3xl font-bold mb-4">
+                {section.title}
+              </h2>
+              <p>
+                {section.content}
+                {section.link && (
+                  <Link to={section.link.to} className="text-blue-600 hover:underline">
+                    {section.link.label}
+                  </Link>
+                )}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.main>
+
+      <Footer />
+    </>
   );
 }
