@@ -170,8 +170,8 @@ const AISuggestion: React.FC = () => {
   }, []);
   return <>
         <Helmet>
-          <title>Describe Requirements in Wipe & Vibe Coding</title>
-          <meta name="description" content="Write precise prompts in Wipe & Vibe Coding to speed delivery and reduce rework." />
+          <title>AI Suggestion: Get Code from AI</title>
+          <meta name="description" content="Accelerate Wipe & Vibe Coding with AI Suggestion: craft clear prompts, review outputs, and integrate AI-generated code securely" />
         </Helmet>
         <Navbar />
         <motion.main
