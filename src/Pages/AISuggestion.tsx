@@ -45,6 +45,46 @@ const CorePrincipals: React.FC = ()=>{
         </div>
 };
 
+const StepByStepGuide: React.FC = ()=>{
+        return <div>
+            <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">Step-by-Step Guide</motion.h2>
+            <ol className="list-disc list-inside space-y-4">
+                <motion.li variants={itemVariants}>
+                    <strong>Defining Your Prompt: </strong>Start with a structured template. For example:
+                    <motion.div
+                        variants={itemVariants}
+                        transition={{ delay: 0.2 }}
+                        className="bg-gray-50 p-6 rounded-lg shadow-lg"
+                    >
+                        <h4 className="text-xl font-semibold mb-3">psql</h4>
+                        <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+                        <code>Write a Python function named format_date that converts 'YYYY-MM-DD' to 'Month Day, Year' (e.g. '2025-12-31' ➔ 'December 31, 2025').</code>
+                        </pre>
+                    </motion.div>
+                    This prompt spells out the language, function name, and behavior. You might also list expected inputs and outputs. Providing such detail ensures the AI knows exactly what code to produce.
+                    For complex tasks, break them into subtasks or give multiple examples (few-shot prompting).
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <strong>Sending & Receiving Code</strong>
+                    <p>
+                        Use an AI coding tool or API to submit your prompt. For example, you might use the OpenAI API or a chat interface, or an AI assistant like Replit or GitHub Copilot. When you send the prompt, the AI responds with code. Ensure your API keys or tools are configured securely. Capture the AI’s output for analysis. If using an interface like OpenAI Playground, you can experiment with different prompts interactively.
+                    </p>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <strong>Reviewing & Testing Output</strong>
+                    <p>
+                        Carefully inspect the AI’s code. Run automatic formatters (Prettier, Black) and linters for style. Execute unit tests to verify correctness, including edge cases. Validate performance with example data. For security, run static analysis tools (e.g. SonarQube) to find vulnerabilities. Surveys show many developers worry about AI code security, so thorough review is critical.
+                    </p>
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <strong>Integrating into Project</strong>
+                    <p>
+                        Once the code passes review, integrate it into your codebase. Organize it into modules or classes to fit your architecture. Remove any test stubs or debug code. Update documentation or inline comments as needed. Use version control to commit the new code so peers can review it. This structured approach (rather than ad-hoc copy/paste) keeps your project maintainable and secure.
+                    </p>
+                </motion.li>
+            </ol>
+        </div>
+};
 
 const AISuggestion: React.FC = () => {
   useEffect(() => {
@@ -74,6 +114,7 @@ const AISuggestion: React.FC = () => {
                         </p>
                     </motion.div>
                     <CorePrincipals/>
+                    <StepByStepGuide/>
             </div>
         </motion.main>
         <Footer />
