@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import HomePage from './pages/HomePage';
 import DefineConceptSection from './pages/DefineConceptSection';
 import Prompt from './pages/Prompt';
+import AISuggestion from './pages/AISuggestion';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -27,7 +28,10 @@ root.render(
           path="/prompt"
           element={<Prompt />}
         />
-
+        <Route
+          path="/ai-suggestion"
+          element={<AISuggestion />}
+        />
         {/* Fallback 404 (optional) */}
         <Route
           path="*"
