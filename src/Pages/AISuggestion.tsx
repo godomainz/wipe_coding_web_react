@@ -34,7 +34,6 @@ const AISuggestion: React.FC = () => {
           variants={containerVariants}
         >
             <div className="max-w-4xl mx-auto px-4 py-12 prose lg:prose-xl">
-                <motion.div>
                     <motion.div variants={itemVariants}>
                         <h2 className="text-3xl font-bold mb-4">Why "AI Suggestion" is a Game-Changer in Wipe/Vibe Coding</h2>
                         <p>
@@ -45,9 +44,9 @@ const AISuggestion: React.FC = () => {
                             AI suggestion has become a best practice for many teams. Wipe coding refers to letting the AI “wipe in” complete solutions from your instructions, while vibe coding means interacting with AI suggestions to refine your code as you work. For instance, a wipe-coding prompt might have the AI generate an entire data-fetching module, whereas vibe coding could give real-time function suggestions as you type. The result is a smart coding partner that handles routine tasks. Of course, this power comes with responsibility: developers must still validate and secure the AI’s output before using it in production.
                         </p>
                     </motion.div>
-                    <motion.div>
+                    <div>
                         <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">Core Principles</motion.h2>
-                        <motion.ul className="list-disc list-inside space-y-4">
+                        <ul className="list-disc list-inside space-y-4">
                             <motion.li variants={itemVariants}>
                                 <strong>Prompt Engineering Basics</strong>
                                 <p>
@@ -69,9 +68,8 @@ const AISuggestion: React.FC = () => {
                                     For example, if the code misses a case, say so in the prompt. Each round of refinement hones the result. Keep track of improvements so you can merge changes seamlessly.
                                 </p>
                             </motion.li>
-                        </motion.ul>
-                    </motion.div>
-                </motion.div>
+                        </ul>
+                    </div>
             </div>
         </motion.main>
         <Footer />
