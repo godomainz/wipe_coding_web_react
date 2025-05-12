@@ -86,6 +86,84 @@ const StepByStepGuide: React.FC = ()=>{
         </div>
 };
 
+const ExamplesSnippets: React.FC = ()=>{
+        return <div>
+            <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">Examples & Snippets</motion.h2>
+            <ol className="list-disc list-inside space-y-4">
+                <motion.li variants={itemVariants}>
+                    <strong>Bad vs Good Prompt and Output</strong>
+                    <p>
+                        <strong>Bad Prompt: </strong><code className="bg-gray-100">Sort a list of numbers. </code>
+                        This vague prompt might yield a quick answer but not robust code.
+                        AI response:
+                    </p>
+                    <motion.div
+                        variants={itemVariants}
+                        transition={{ delay: 0.2 }}
+                        className="bg-gray-50 p-6 rounded-lg shadow-lg"
+                    >
+                        <h4 className="text-xl font-semibold mb-3">python</h4>
+                        <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+                            <code>
+                                {`
+                                def sort_numbers(nums):
+                                    nums.sort()
+                                    return nums
+                                `}
+                            </code>
+                        </pre>
+                    </motion.div>
+                   This function works but lacks clarity on return values and documentation.
+                   <p>
+                    <strong>Good Prompt: </strong><code className="bg-gray-100">"Write a Python function sort_list(nums) that returns a new sorted list of integers from the input 'nums'. Include a docstring explaining the function." </code>
+                   </p>
+                   <strong>Better Output: </strong>
+                    <motion.div
+                        variants={itemVariants}
+                        transition={{ delay: 0.2 }}
+                        className="bg-gray-50 p-6 rounded-lg shadow-lg"
+                    >
+                        <h4 className="text-xl font-semibold mb-3">python</h4>
+                        <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+                            <code>
+                                {`
+                                def sort_list(nums):
+                                    """
+                                    Returns a new list containing the elements of nums in sorted order.
+                                    """
+                                    return sorted(nums)
+                                `}
+                            </code>
+                        </pre>
+                    </motion.div>
+                    The improved prompt produced clear, well-documented code.
+                </motion.li>
+                <motion.li variants={itemVariants}>
+                    <strong>Sample AI Conversation</strong>
+                    <motion.div
+                        variants={itemVariants}
+                        transition={{ delay: 0.2 }}
+                        className="bg-gray-50 p-6 rounded-lg shadow-lg"
+                    >
+                        <h4 className="text-xl font-semibold mb-3">matlab</h4>
+                        <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+                            <code>
+                                {`
+                                User: "Write a JavaScript function to check if a number is even."
+                                AI: 
+                                function isEven(num) {
+                                    return num % 2 === 0;
+                                }
+                                `}
+                            </code>
+                        </pre>
+                    </motion.div>
+                    This example shows a simple user query and a concise AI response.
+                </motion.li>
+            </ol>
+        </div>
+};
+
 const AISuggestion: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -115,6 +193,7 @@ const AISuggestion: React.FC = () => {
                     </motion.div>
                     <CorePrincipals/>
                     <StepByStepGuide/>
+                    <ExamplesSnippets/>
             </div>
         </motion.main>
         <Footer />
