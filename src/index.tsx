@@ -22,7 +22,7 @@ root.render(
 
         {/* Define App Concept screen */}
         <Route
-          path="/define-app-concept"
+          path="/idea"
           element={<DefineConceptSection />}
         />
         <Route

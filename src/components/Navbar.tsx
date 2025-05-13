@@ -3,14 +3,12 @@ import React from 'react';
 const Navbar: React.FC = () => (
   <header className="fixed w-full z-50 bg-white bg-opacity-80 backdrop-blur-md">
     <div className="container mx-auto flex items-center justify-between py-4 px-6">
-      <nav className="hidden md:flex space-x-8">
-        <a href="/" className="text-gray-800 hover:text-blue-600">Home</a>
-        <a href="#about" className="text-gray-800 hover:text-blue-600">About</a>
-      </nav>
       <a href="/" className="text-2xl font-bold text-gray-800">WipeCoding</a>
       <nav className="hidden md:flex space-x-8">
-        <a href="#features" className="text-gray-800 hover:text-blue-600">Features</a>
-        <a href="#tutorials" className="text-gray-800 hover:text-blue-600">Tutorials</a>
+        <a href="/idea" className="text-gray-800 hover:text-blue-600">Idea</a>
+        <a href="/prompt" className="text-gray-800 hover:text-blue-600">Prompt</a>
+        <a href="/ai-suggestion" className="text-gray-800 hover:text-blue-600">AI Suggestion</a>
+        <a href="/test-deploy" className="text-gray-800 hover:text-blue-600">Test & Deploy</a>
       </nav>
       <button className="md:hidden text-gray-800 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -57,7 +57,7 @@ const Features: React.FC = () => {
               variants={itemVariants}
               onClick={() => {
                 if (f.title === 'Idea') {
-                  navigate('/define-app-concept');
+                  navigate('/idea');
                 }
                 if (f.title === 'Prompt') {
                   navigate('/prompt');
