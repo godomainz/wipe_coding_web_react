@@ -115,6 +115,87 @@ const StepByStepGuide: React.FC = ()=>{
         </div>
 };
 
+const ExamplesTemplates: React.FC = ()=>{
+        return <div className='py-4'>
+            <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">Examples & Templates</motion.h2>
+                <motion.div variants={itemVariants}>
+                    <strong>Sample CI/CD Pipeline (GitHub Actions YAML)</strong>
+                    <p>
+                      Below is a simplified example of a GitHub Actions workflow file (<code className='bg-gray-100'>ci.yml</code>) that installs dependencies and runs tests automatically on every push to the main branch.
+                      You can adapt it to fit your project and add steps like linting or deploying as needed.
+                    </p>
+                </motion.div>
+                <motion.div
+                        variants={itemVariants}
+                        transition={{ delay: 0.2 }}
+                        className="bg-gray-50 p-6 rounded-lg shadow-lg"
+                    >
+                        <h4 className="text-xl font-semibold mb-3">yaml</h4>
+                        <pre className="bg-gray-100 p-4 rounded overflow-auto whitespace-pre-wrap">
+                            <code>
+                                {`
+                                name: CI
+                                on:
+                                push:
+                                    branches: [ "main" ]
+                                jobs:
+                                build-and-test:
+                                    runs-on: ubuntu-latest
+                                    steps:
+                                    - uses: actions/checkout@v3
+                                    - uses: actions/setup-node@v3
+                                        with:
+                                        node-version: 18
+                                    - run: npm install
+                                    - run: npm test
+                                `}
+                            </code>
+                        </pre>
+                    </motion.div>
+                    <ul className="list-disc list-inside space-y-4 py-4">
+                        <motion.li variants={itemVariants}>
+                            <strong>Code Review Checklist</strong>
+                            <p>
+                                Use a checklist to make sure nothing is overlooked during reviews. Here’s an example code review checklist before the final <strong>review and launch</strong>.
+                            </p>
+                        </motion.li>
+                        <motion.li variants={itemVariants}>
+                            <strong>Functionality</strong>
+                            <p>
+                                Does the code do what it's supposed to do for all expected inputs? Are edge cases and error conditions handled gracefully?
+                            </p>
+                        </motion.li>
+                        <motion.li variants={itemVariants}>
+                            <strong>Code Quality</strong>
+                            <p>
+                                Is the code readable and maintainable? (Clear naming, modular structure, comments where necessary.) Does it follow our style guidelines and best practices?
+                            </p>
+                        </motion.li>
+                        <motion.li variants={itemVariants}>
+                            <strong>Testing</strong>
+                            <p>
+                                Are there appropriate tests for new or changed code? Do all existing tests still pass? (Ensure the test suite covers the new functionality and corner cases.)
+                            </p>
+                        </motion.li>
+                        <motion.li variants={itemVariants}>
+                            <strong>Security & Stability</strong>
+                            <p>
+                                Are there any obvious security risks (e.g. injection, insecure data handling) introduced? Did we remove any sensitive info (keys, passwords) from code/config? Any performance or memory red flags?
+                            </p>
+                        </motion.li>
+                        <motion.li variants={itemVariants}>
+                            <strong>Documentation</strong>
+                            <p>
+                                Is user-facing documentation (like README or docs) updated if needed? Are important comments or TODOs addressed or captured for future work?
+                            </p>
+                        </motion.li>
+                    </ul>
+                    <motion.p>
+                        This checklist helps reviewers systematically verify that the code is ready for deployment. It's a good idea to automate parts of this (for example, use tools to check test coverage or security scanners), but a human eye should verify the overall readiness.
+                    </motion.p>
+        </div>
+};
+
 
 const TestDeploy: React.FC = () => {
   useEffect(() => {
@@ -139,6 +220,7 @@ const TestDeploy: React.FC = () => {
                     <Introduction />
                     <CorePrincipals/>
                     <StepByStepGuide />
+                    <ExamplesTemplates />
             </div>
         </motion.main>
         <Footer />
