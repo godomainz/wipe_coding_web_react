@@ -35,27 +35,32 @@ const CorePrincipals: React.FC = ()=>{
             <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">Core Principles</motion.h2>
             <ul className="list-disc list-inside space-y-4">
                 <motion.li variants={itemVariants}>
-                    <strong>Prompt Engineering Basics</strong>
+                    <strong>Quality Assurance (QA)</strong>
                     <p>
-                        Give the AI a clear, specific task. Include the programming language, function name, and requirements. For example, specify "Write a Python function named calculate_area that returns the area of a circle given its radius." This context avoids ambiguity. Use examples or constraints (like I/O format or edge cases) to improve clarity. OpenAI advises using the latest model and very detailed instructions to get better outputs.
-                        You can also include sample input/output pairs for multi-step tasks.
+                       Embrace a testing mindset. This means writing <strong>unit tests</strong> for individual functions, <strong>integration tests</strong> for combined components, and <strong>end-to-end (E2E) tests</strong> for user flows.
+                       Comprehensive QA ensures your app actually works as intended in all scenarios and catches issues early.
                     </p>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                    <strong>Security & Quality</strong>
+                    <strong>Continuous Integration (CI)</strong>
                     <p>
-                        Always validate AI-generated code. Run linters (ESLint, Pylint) and unit tests to catch errors. Check for common vulnerabilities (SQL injection, buffer overflow, etc.) and sanitize inputs. Follow secure coding guidelines – OWASP notes that manual code review is still essential for safe software.
-                        Use static analysis tools (SonarQube, Semgrep) to scan for risks. Remember reproducibility: AI outputs can vary, so save or pin your prompt and model version.
+                        Set up automated builds and checks whenever code changes. With CI, every code commit triggers actions (like running tests and linters) to verify that new changes don't break anything. 
+                        This constant feedback loop prevents integration problems and makes the <strong>test & deploy</strong> cycle smoother.
                     </p>
                 </motion.li>
                 <motion.li variants={itemVariants}>
-                    <strong>Iteration & Feedback</strong>
+                    <strong>Safe Deployment</strong>
                     <p>
-                        Treat AI output as an initial draft. Rarely is the first suggestion perfect. If a response is incomplete or buggy, refine your prompt and try again. You can include the AI’s own output or error messages in the next prompt to guide corrections.
-                        For example, if the code misses a case, say so in the prompt. Each round of refinement hones the result. Keep track of improvements so you can merge changes seamlessly.
+                        Deploy new code cautiously to minimize risk. Techniques like <strong>feature flags</strong> (to turn features on/off without redeploying) and <strong>canary releases</strong> (gradually rolling out updates to a subset of users) let you control exposure.
+                        These strategies provide quick rollback options if something goes wrong, ensuring you can recover quickly from any issue.
                     </p>
                 </motion.li>
             </ul>
+            <motion.div variants={itemVariants} className="py-4">
+                        <p>
+                            By adhering to these core principles, developers in the Wipe & Vibe coding era can build confidence that their AI-generated code is production-ready. Next, we'll walk through a step-by-step guide to testing, reviewing, and deploying your project with best practices at each stage.
+                        </p>
+            </motion.div>
         </div>
 };
 
