@@ -7,21 +7,6 @@ const Footer: React.FC = () => (
         <h4 className="font-bold text-gray-800 mb-2">WipeCoding</h4>
         <p className="text-gray-600">Empowering your coding journey.</p>
       </div>
-      <div>
-        <h4 className="font-bold text-gray-800 mb-2">Links</h4>
-        <ul className="space-y-1 text-gray-600">
-          <li><a href="#home" className="hover:underline">Home</a></li>
-          <li><a href="#about" className="hover:underline">About</a></li>
-          <li><a href="#features" className="hover:underline">Features</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 className="font-bold text-gray-800 mb-2">Connect</h4>
-        <div className="flex space-x-4">
-          <a href="https://github.com/wipecoding" className="text-gray-600 hover:text-gray-800">GitHub</a>
-          <a href="https://twitter.com/wipecoding" className="text-gray-600 hover:text-gray-800">Twitter</a>
-        </div>
-      </div>
     </div>
     <div className="text-center text-gray-500 text-sm mt-6">
       &copy; {new Date().getFullYear()} WipeCoding. Public Domain.
