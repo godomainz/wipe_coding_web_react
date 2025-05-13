@@ -10,6 +10,11 @@ interface Resource {
 
 const resources: Resource[] = [
   {
+    iconPath: '/icons/chatgpt.svg',
+    title: 'ChatGpt',
+    description: 'Generative artificial intelligence chatbot',
+  },
+  {
     iconPath: '/icons/tempo.svg',
     title: 'Tempo Labs',
     description: 'AI-driven full-stack app builder with PRD generation and visual flows.',
