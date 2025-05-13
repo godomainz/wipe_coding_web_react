@@ -196,6 +196,50 @@ const ExamplesTemplates: React.FC = ()=>{
         </div>
 };
 
+const ToolsResources: React.FC = ()=>{
+        return <div className='py-4'>
+            <motion.h2 variants={itemVariants} className="text-2xl font-bold mb-4">Examples & Templates</motion.h2>
+                <motion.div variants={itemVariants}>
+                    <strong>Tools & Resources</strong>
+                    <p>
+                      In Wipe & Vibe Coding, you have a wealth of tools to support the test and deployment process. Here are some useful categories of tools and services:
+                    </p>
+                </motion.div>
+                <ul className="list-disc list-inside space-y-4 py-4">
+                    <motion.li variants={itemVariants}>
+                        <strong>Testing Frameworks</strong>
+                        <p>
+                           Tools like <strong>Jest</strong>, <strong>Mocha</strong>, or <strong>JUnit</strong> facilitate writing and running unit tests, while <strong>Cypress</strong> or Playwright help with end-to-end testing for web applications.
+                           These frameworks make it easier to simulate scenarios and assert expected outcomes.
+                        </p>
+                    </motion.li>
+                    <motion.li variants={itemVariants}>
+                        <strong>CI/CD Services</strong>
+                        <p>
+                            Platforms such as <strong>GitHub Actions</strong>, <strong>CircleCI</strong>, <strong>GitLab CI</strong>, or <strong>Jenkins</strong> can automate your build, test, and deployment pipeline.
+                            They integrate with your repository to run the test suite and other checks on each commit. A solid CI service is the backbone of a reliable <strong>test deploy</strong> pipeline.
+                        </p>
+                    </motion.li>
+                    <motion.li variants={itemVariants}>
+                        <strong>Feature Flag Platforms</strong>
+                        <p>
+                            Services like <strong>LaunchDarkly</strong>, <strong>Flagsmith</strong>, or <strong>ConfigCat</strong> allow you to implement feature flags and gradual rollouts easily.
+                            They provide dashboards to toggle features on or off and target releases to subsets of users, which is extremely useful for safe deployment strategies.
+                        </p>
+                    </motion.li>
+                    <motion.li variants={itemVariants}>
+                        <strong>Monitoring & Observability</strong>
+                        <p>
+                            Use monitoring tools (e.g. <strong>Datadog</strong>, <strong>New Relic</strong>, or open-source stacks like Prometheus/Grafana) to watch application metrics, and logging/error tracking tools (like <strong>Sentry</strong> or <strong>Loggly</strong>) to catch issues post-deployment.
+                            These help you ensure your deployed app is healthy and quickly detect anomalies.
+                        </p>
+                    </motion.li>
+                </ul>
+                    <motion.p>
+                        For a more comprehensive list of development resources and tools, check out our Tools & Resources page, which covers testing libraries, CI/CD services, deployment tools, and more.
+                    </motion.p>
+        </div>
+};
 
 const TestDeploy: React.FC = () => {
   useEffect(() => {
@@ -221,6 +265,7 @@ const TestDeploy: React.FC = () => {
                     <CorePrincipals/>
                     <StepByStepGuide />
                     <ExamplesTemplates />
+                    <ToolsResources />
             </div>
         </motion.main>
         <Footer />
