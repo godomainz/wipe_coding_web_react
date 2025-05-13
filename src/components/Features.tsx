@@ -65,6 +65,9 @@ const Features: React.FC = () => {
                 if (f.title === 'AI Suggestion') {
                   navigate('/ai-suggestion');
                 }
+                 if (f.title === 'Test & Deploy') {
+                  navigate('/test-deploy');
+                }
               }}
             >
               <div className="mx-auto w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-md mb-4">

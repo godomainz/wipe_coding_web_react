@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import DefineConceptSection from './pages/DefineConceptSection';
 import Prompt from './pages/Prompt';
 import AISuggestion from './pages/AISuggestion';
+import TestDeploy from './pages/TestDeploy';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -31,6 +32,10 @@ root.render(
         <Route
           path="/ai-suggestion"
           element={<AISuggestion />}
+        />
+        <Route
+          path="/test-deploy"
+          element={<TestDeploy />}
         />
         {/* Fallback 404 (optional) */}
         <Route
