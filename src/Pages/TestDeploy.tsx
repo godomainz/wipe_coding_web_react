@@ -249,6 +249,7 @@ const TestDeploy: React.FC = () => {
         <Helmet>
           <title>Test & Deploy: Review and Launch in Wipe & Vibe Coding</title>
           <meta name="description" content="Test & Deploy: Review and Launch in Wipe & Vibe Coding" />
+          <meta name="keywords" content="Wipe Coding, learn Wipe Coding, Wipe Coding tutorials, coding education, Vibe Coding" />
         </Helmet>
         <Navbar />
         <motion.main
