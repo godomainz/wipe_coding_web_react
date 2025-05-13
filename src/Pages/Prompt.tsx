@@ -83,6 +83,7 @@ const Prompt: React.FC = () => {
         <Helmet>
           <title>Describe Requirements in Wipe & Vibe Coding</title>
           <meta name="description" content="Write precise prompts in Wipe & Vibe Coding to speed delivery and reduce rework." />
+          <meta name="keywords" content="Wipe Coding, learn Wipe Coding, Wipe Coding tutorials, coding education, Vibe Coding" />
         </Helmet>
         <Navbar />
         <motion.main
